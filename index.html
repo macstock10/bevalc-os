@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venue OS — The Operating System for Craft Beverage Venues</title>
+    <title>Venue OS | The Operating System for Craft Beverage Venues</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -346,7 +346,7 @@
 
         .mockup-stat-value {
             font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--charcoal);
         }
@@ -747,6 +747,72 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
+        /* How It Installs Section */
+        .how-installs {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .how-installs-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .how-installs-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .how-installs-header h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .how-installs-header p {
+            color: var(--charcoal-light);
+        }
+
+        .install-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .install-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .install-item-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: var(--cream);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .install-item-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--copper);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .install-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .install-item p {
+            font-size: 0.9rem;
+            color: var(--charcoal-light);
+            line-height: 1.5;
+        }
+
         /* How It Works */
         .how-it-works {
             padding: 6rem 2rem;
@@ -821,6 +887,42 @@
         .step p {
             font-size: 0.9rem;
             color: var(--charcoal-light);
+        }
+
+        /* ROI Box */
+        .roi-section {
+            padding: 4rem 2rem;
+            background: var(--cream);
+        }
+
+        .roi-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .roi-box {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--charcoal) 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .roi-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .roi-box p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .roi-box .highlight {
+            color: var(--copper-light);
+            font-weight: 600;
         }
 
         /* Pricing */
@@ -926,9 +1028,16 @@
         .pricing-card-setup {
             font-size: 0.85rem;
             color: var(--charcoal-light);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card-billing {
+            font-size: 0.8rem;
+            color: var(--charcoal-light);
             margin-bottom: 2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--cream-dark);
+            font-style: italic;
         }
 
         .pricing-card-features {
@@ -1085,7 +1194,7 @@
 
         /* Footer */
         footer {
-            padding: 3rem 2rem;
+            padding: 3rem 2rem 2rem;
             background: var(--charcoal);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -1096,6 +1205,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 2rem;
         }
 
         .footer-logo {
@@ -1131,6 +1241,20 @@
             text-decoration: none;
         }
 
+        .footer-compliance {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-compliance p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.6;
+        }
+
         /* Responsive */
         @media (max-width: 1000px) {
             .venue-grid {
@@ -1148,6 +1272,11 @@
 
             .feature-visual {
                 display: none;
+            }
+
+            .install-items {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
@@ -1241,7 +1370,7 @@
                     Built for craft beverage venues
                 </div>
                 <h1>The Operating System for <span>BevAlc Venues</span></h1>
-                <p class="hero-description">Bookings, follow-up, reviews, and guest reactivation—all on autopilot. Stop losing revenue and start filling your tasting room.</p>
+                <p class="hero-description">Bookings, follow-up, reviews, and guest reactivation running on autopilot. Stop losing revenue and start filling your tasting room.</p>
                 <div class="hero-venue-types">
                     <span class="venue-tag">Distilleries</span>
                     <span class="venue-tag">Breweries</span>
@@ -1270,11 +1399,11 @@
                     <div class="mockup-content">
                         <div class="mockup-stat">
                             <div class="mockup-stat-label">Bookings This Week</div>
-                            <div class="mockup-stat-value positive">47</div>
+                            <div class="mockup-stat-value positive">↑ Up</div>
                         </div>
                         <div class="mockup-stat">
                             <div class="mockup-stat-label">Leads Recovered</div>
-                            <div class="mockup-stat-value copper">12</div>
+                            <div class="mockup-stat-value copper">Active</div>
                         </div>
                         <div class="mockup-activity">
                             <div class="mockup-activity-header">Recent Activity</div>
@@ -1282,21 +1411,21 @@
                                 <div class="activity-icon green">
                                     <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                                 </div>
-                                <span class="activity-text">New booking: Saturday 2pm tour</span>
-                                <span class="activity-time">2m ago</span>
+                                <span class="activity-text">New booking confirmed</span>
+                                <span class="activity-time">Just now</span>
                             </div>
                             <div class="activity-item">
                                 <div class="activity-icon copper">
                                     <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                                 </div>
-                                <span class="activity-text">New 5-star Google review</span>
+                                <span class="activity-text">New Google review</span>
                                 <span class="activity-time">15m ago</span>
                             </div>
                             <div class="activity-item">
                                 <div class="activity-icon wine">
                                     <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.32 1.6.56 2.37"/></svg>
                                 </div>
-                                <span class="activity-text">Missed call → Auto text sent</span>
+                                <span class="activity-text">Missed call recovered</span>
                                 <span class="activity-time">1h ago</span>
                             </div>
                         </div>
@@ -1351,7 +1480,7 @@
                     <div class="problem-item-icon">
                         <svg viewBox="0 0 24 24"><path d="M15.05 5A5 5 0 0119 8.95M15.05 1A9 9 0 0123 8.94m-1 7.98v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.32 1.6.56 2.37"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
                     </div>
-                    <h4>Missed calls = lost bookings</h4>
+                    <h4>Missed calls become lost bookings</h4>
                     <p>Your phone rings while you're pouring. The caller moves on to the next venue on Google.</p>
                 </div>
                 <div class="problem-item">
@@ -1359,7 +1488,7 @@
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
                     <h4>No-shows waste your time</h4>
-                    <p>Without reminders, 15-20% of bookings don't show up. That's empty seats and lost revenue.</p>
+                    <p>Without reminders, a significant portion of bookings don't show up. That's empty seats and lost revenue.</p>
                 </div>
                 <div class="problem-item">
                     <div class="problem-item-icon">
@@ -1394,7 +1523,7 @@
                             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                         </div>
                         <h3>Missed Call Text-Back</h3>
-                        <p>Every missed call gets an instant text within 60 seconds. Leads don't die—they book.</p>
+                        <p>Every missed call gets an instant text. Leads don't die; they book.</p>
                         <ul class="feature-list">
                             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Automatic response to every missed call</li>
                             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Customizable message with booking link</li>
@@ -1427,7 +1556,7 @@
                         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </div>
                     <h3>Event Booking</h3>
-                    <p>Online scheduling for tours, tastings, and events. Guests book themselves 24/7.</p>
+                    <p>Online scheduling for tours, tastings, and events. Guests book themselves around the clock.</p>
                     <ul class="feature-list">
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Embeddable booking calendar</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Automatic confirmations</li>
@@ -1441,9 +1570,9 @@
                         <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
                     </div>
                     <h3>Smart Reminders</h3>
-                    <p>Day-before and day-of reminders that significantly reduce no-shows.</p>
+                    <p>Day-before and day-of reminders that materially reduce no-shows.</p>
                     <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SMS + email reminders</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SMS and email reminders</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Confirmation requests</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Easy rescheduling</li>
                     </ul>
@@ -1455,7 +1584,7 @@
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <h3>Review Engine</h3>
-                    <p>Automatically request Google reviews after every visit. More reviews = more bookings.</p>
+                    <p>Automatically request Google reviews after every visit. More reviews means more bookings.</p>
                     <ul class="feature-list">
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Post-visit review requests</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Direct link to Google</li>
@@ -1485,10 +1614,43 @@
                     <h3>Guest Reactivation</h3>
                     <p>Bring past visitors back with automated seasonal campaigns and new release announcements.</p>
                     <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 30/60/90 day re-engagement</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Timed re-engagement sequences</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Seasonal campaign templates</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Birthday/anniversary triggers</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Birthday and anniversary triggers</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Installs -->
+    <section class="how-installs">
+        <div class="how-installs-container">
+            <div class="how-installs-header">
+                <h2>How It Connects to Your Venue</h2>
+                <p>Works alongside your existing tools. No ripping and replacing.</p>
+            </div>
+            <div class="install-items">
+                <div class="install-item">
+                    <div class="install-item-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <h4>Calls</h4>
+                    <p>You get a dedicated tracking number. Keep your existing number or forward to us. Missed calls trigger automatic text-back.</p>
+                </div>
+                <div class="install-item">
+                    <div class="install-item-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h4>Booking</h4>
+                    <p>Embed our calendar on your website or link to it directly. Works alongside Toast, Square, and Eventbrite. Reminders run automatically.</p>
+                </div>
+                <div class="install-item">
+                    <div class="install-item-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <h4>Reviews</h4>
+                    <p>We connect your Google Business Profile. After visits, guests receive a review request linking directly to your Google listing.</p>
                 </div>
             </div>
         </div>
@@ -1506,7 +1668,7 @@
                         <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
                     <h4>Watch the demo</h4>
-                    <p>See exactly what you're getting in 2 minutes</p>
+                    <p>See exactly what you're getting</p>
                 </div>
                 <div class="step">
                     <div class="step-number">
@@ -1520,15 +1682,25 @@
                         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                     </div>
                     <h4>Fill out one form</h4>
-                    <p>We handle the entire setup for you</p>
+                    <p>We handle the entire setup</p>
                 </div>
                 <div class="step">
                     <div class="step-number">
                         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
                     <h4>Go live</h4>
-                    <p>We'll have you up and running within a few days</p>
+                    <p>Your system starts running</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section class="roi-section">
+        <div class="roi-container">
+            <div class="roi-box">
+                <h3>Does this pay for itself?</h3>
+                <p>If you recover just <span class="highlight">a few missed calls per month</span> that turn into bookings, Venue OS covers its own cost. Add in fewer no-shows, more Google reviews driving new traffic, and past guests coming back on their own, and the math works quickly.</p>
             </div>
         </div>
     </section>
@@ -1538,7 +1710,7 @@
         <div class="pricing-container">
             <div class="pricing-header">
                 <h2>Simple pricing. No surprises.</h2>
-                <p>Cancel anytime. Usage fees (SMS/calls) billed separately at cost.</p>
+                <p>Cancel anytime. No long-term contracts.</p>
             </div>
             <div class="pricing-cards">
                 <div class="pricing-card">
@@ -1550,32 +1722,34 @@
                         <span class="period">/month</span>
                     </div>
                     <div class="pricing-card-setup">+ $500 one-time setup</div>
+                    <div class="pricing-card-billing">Subscription billed monthly. SMS and phone usage billed separately at cost.</div>
                     <ul class="pricing-card-features">
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Missed Call Text-Back</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Event Booking Calendar</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Smart Reminders</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Review Engine</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Guest Reactivation</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Email + chat support</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Email and chat support</li>
                     </ul>
                     <a href="#" class="btn btn-secondary">Get Started</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-card-name">Growth</div>
-                    <div class="pricing-card-description">For venues with private events + higher volume</div>
+                    <div class="pricing-card-description">For venues with private events and higher volume</div>
                     <div class="pricing-card-price">
                         <span class="currency">$</span>
                         <span class="amount">447</span>
                         <span class="period">/month</span>
                     </div>
-                    <div class="pricing-card-setup">+ $500 setup (waived if annual)</div>
+                    <div class="pricing-card-setup">+ $500 one-time setup</div>
+                    <div class="pricing-card-billing">Subscription billed monthly. SMS and phone usage billed separately at cost.</div>
                     <ul class="pricing-card-features">
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Starter</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Private Events Pipeline</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Wedding/corporate automation</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Wedding and corporate automation</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced reporting dashboard</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Quarterly async audit (Loom + checklist)</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support via ticket or chat, response within one business day</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Quarterly async audit via Loom and checklist</li>
                     </ul>
                     <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
@@ -1587,7 +1761,7 @@
     <section class="faq" id="faq">
         <div class="faq-container">
             <div class="faq-header">
-                <h2>Questions? We've got answers.</h2>
+                <h2>Questions? Answers below.</h2>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
@@ -1595,7 +1769,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>No. We handle all the setup. You'll get a simple dashboard to see what's happening, but the system runs itself. If you can send a text, you can use Venue OS.</p>
+                    <p>No. We handle all the setup. You get a simple dashboard to see what's happening, but the system runs itself. If you can send a text, you can use Venue OS.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1604,7 +1778,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Venue OS works alongside your existing tools—it doesn't replace your POS or ticketing. You'll get a dedicated booking calendar you can embed on your website or link to directly. We connect your Google Business Profile for reviews. Your existing systems stay exactly as they are.</p>
+                    <p>Venue OS works alongside your existing tools and does not replace your POS or ticketing. You get a dedicated booking calendar you can embed on your website or link to directly. We connect your Google Business Profile for reviews. Your existing systems stay exactly as they are.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1613,7 +1787,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>About 15 minutes a day to check your shared inbox and respond to conversations that need a human touch. We provide reply templates for common questions. Everything else—reminders, review requests, reactivation—runs automatically in the background.</p>
+                    <p>Plan on checking your shared inbox once or twice a day to respond to conversations that need a human touch. We provide reply templates for common questions. Everything else runs automatically in the background, including reminders, review requests, and reactivation.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1622,16 +1796,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>SMS and calls are billed at cost—typically $20-50/month for most venues depending on volume. During onboarding, we set up a dedicated phone number for your venue and configure your email sending. You'll have a separate usage account so billing is transparent and there are no surprises.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    Can I cancel anytime?
-                    <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes. No contracts, no cancellation fees. If it's not working for you, cancel with one email. We'll even help you export your data.</p>
+                    <p>SMS and phone usage are billed at cost to your card, separate from your subscription. Most venues see somewhere in the range of $20 to $50 per month depending on volume. During onboarding, we set up a dedicated phone number for your venue and configure your email sending. Billing is transparent and you can see usage anytime.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1640,16 +1805,16 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>All SMS messaging is fully compliant. Guests opt-in when they book or inquire. Every message includes STOP to unsubscribe and HELP for support. We handle the compliance setup during onboarding—you don't need to think about it.</p>
+                    <p>All SMS messaging is fully compliant. We only send messages to guests who opt in, either when they book, inquire, or fill out a form on your site. Every message includes STOP to unsubscribe and HELP for support. We handle the compliance setup during onboarding, including adding opt-in language to your booking and inquiry forms.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    Is this actually worth the cost?
+                    Can I cancel anytime?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Do the math: if you recover just 3-4 missed calls per month that turn into bookings, the system pays for itself. Add in fewer no-shows, more Google reviews driving new traffic, and past guests coming back—most venues see clear ROI within 60 days.</p>
+                    <p>Yes. No long-term contracts and no cancellation fees. If it's not working for you, cancel with one email. We will help you export your data.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1658,7 +1823,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Venue OS is built specifically for craft beverage venues: distilleries, breweries, wineries, tasting rooms, and whiskey bars. If you host tastings, tours, or events, this is for you.</p>
+                    <p>Venue OS is built specifically for craft beverage venues, including distilleries, breweries, wineries, tasting rooms, and whiskey bars. If you host tastings, tours, or events, this is for you.</p>
                 </div>
             </div>
         </div>
@@ -1693,6 +1858,9 @@
             <div class="footer-contact">
                 Questions? <a href="mailto:hey@venueos.com">hey@venueos.com</a>
             </div>
+        </div>
+        <div class="footer-compliance">
+            <p>SMS messages are only sent to guests who opt in. Reply STOP to unsubscribe. Reply HELP for help. Message and data rates may apply.</p>
         </div>
     </footer>
 
