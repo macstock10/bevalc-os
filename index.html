@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venue OS | The Operating System for Craft Beverage Venues</title>
+    <title>BevAlc OS | The Operating System for Craft Beverage Venues</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- 
     ╔═══════════════════════════════════════════════════════════════════════════╗
-    ║  VENUE OS - CONFIGURATION                                                  ║
+    ║  BEVALC OS - CONFIGURATION                                                 ║
     ╠═══════════════════════════════════════════════════════════════════════════╣
     ║                                                                           ║
-    ║  PRICING (search and replace these values):                               ║
-    ║    Starter price: $297                                                    ║
-    ║    Growth price: $447                                                     ║
+    ║  PRICING:                                                                 ║
+    ║    Monthly: $397                                                          ║
     ║    Setup fee: $500                                                        ║
     ║                                                                           ║
     ║  CONTACT:                                                                 ║
-    ║    Email: hey@venueos.com                                                 ║
+    ║    Email: hey@bevalcos.com                                                ║
     ║                                                                           ║
-    ║  LINKS (replace xxxxx with your actual links):                            ║
+    ║  LINKS (replace with your actual links):                                  ║
     ║    Demo video: #demo (replace with Loom link)                             ║
-    ║    Starter checkout: # (replace with Stripe link)                         ║
-    ║    Growth checkout: # (replace with Stripe link)                          ║
+    ║    Checkout: # (replace with Stripe link)                                 ║
     ║                                                                           ║
     ╚═══════════════════════════════════════════════════════════════════════════╝
     -->
@@ -955,6 +953,12 @@
             gap: 2rem;
         }
 
+        .pricing-cards.single {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
         .pricing-card {
             background: var(--white);
             border-radius: 24px;
@@ -971,6 +975,10 @@
         .pricing-card.featured {
             border-color: var(--copper);
             position: relative;
+        }
+
+        .pricing-cards.single .pricing-card.featured::before {
+            display: none;
         }
 
         .pricing-card.featured::before {
@@ -1350,7 +1358,7 @@
             <div class="logo-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             </div>
-            Venue OS
+            BevAlc OS
         </a>
         <div class="nav-links">
             <a href="#features">Features</a>
@@ -1369,7 +1377,7 @@
                     <span class="hero-badge-dot"></span>
                     Built for craft beverage venues
                 </div>
-                <h1>The Operating System for <span>BevAlc Businesses</span></h1>
+                <h1>The Operating System for <span>BevAlc Venues</span></h1>
                 <p class="hero-description">Bookings, follow-up, reviews, and guest reactivation running on autopilot. Stop losing revenue and start filling your tasting room.</p>
                 <div class="hero-venue-types">
                     <span class="venue-tag">Distilleries</span>
@@ -1394,7 +1402,7 @@
                             <span class="mockup-dot"></span>
                             <span class="mockup-dot"></span>
                         </div>
-                        <span class="mockup-title">Venue OS Dashboard</span>
+                        <span class="mockup-title">BevAlc OS Dashboard</span>
                     </div>
                     <div class="mockup-content">
                         <div class="mockup-stat">
@@ -1700,7 +1708,7 @@
         <div class="roi-container">
             <div class="roi-box">
                 <h3>Does this pay for itself?</h3>
-                <p>If you recover just <span class="highlight">a few missed calls per month</span> that turn into bookings, Venue OS covers its own cost. Add in fewer no-shows, more Google reviews driving new traffic, and past guests coming back on their own, and the math works quickly.</p>
+                <p>If you recover just <span class="highlight">a few missed calls per month</span> that turn into bookings, BevAlc OS covers its own cost. Add in fewer no-shows, more Google reviews driving new traffic, and past guests coming back on their own, and the math works quickly.</p>
             </div>
         </div>
     </section>
@@ -1709,47 +1717,30 @@
     <section class="pricing" id="pricing">
         <div class="pricing-container">
             <div class="pricing-header">
-                <h2>Simple pricing. No surprises.</h2>
+                <h2>One plan. Everything included.</h2>
                 <p>Cancel anytime. No long-term contracts.</p>
             </div>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <div class="pricing-card-name">Starter</div>
-                    <div class="pricing-card-description">For venues ready to stop the leaks</div>
+            <div class="pricing-cards single">
+                <div class="pricing-card featured">
+                    <div class="pricing-card-name">BevAlc OS</div>
+                    <div class="pricing-card-description">The complete system for craft beverage venues</div>
                     <div class="pricing-card-price">
                         <span class="currency">$</span>
-                        <span class="amount">297</span>
+                        <span class="amount">397</span>
                         <span class="period">/month</span>
                     </div>
                     <div class="pricing-card-setup">+ $500 one-time setup</div>
-                    <div class="pricing-card-billing">Subscription billed monthly. SMS and phone usage billed separately at cost.</div>
+                    <div class="pricing-card-billing">Subscription billed monthly. SMS and phone usage billed separately at cost (typically $20-50/month).</div>
                     <ul class="pricing-card-features">
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Missed Call Text-Back</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Event Booking Calendar</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Smart Reminders</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Review Engine</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Guest Reactivation</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Email and chat support</li>
-                    </ul>
-                    <a href="#" class="btn btn-secondary">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-card-name">Growth</div>
-                    <div class="pricing-card-description">For venues with private events and higher volume</div>
-                    <div class="pricing-card-price">
-                        <span class="currency">$</span>
-                        <span class="amount">447</span>
-                        <span class="period">/month</span>
-                    </div>
-                    <div class="pricing-card-setup">+ $500 one-time setup</div>
-                    <div class="pricing-card-billing">Subscription billed monthly. SMS and phone usage billed separately at cost.</div>
-                    <ul class="pricing-card-features">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything in Starter</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Smart Reminders (day-before + day-of)</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Review Engine (Google reviews on autopilot)</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Guest Reactivation (30/60/90 day sequences)</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Private Events Pipeline</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Wedding and corporate automation</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Advanced reporting dashboard</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support via ticket or chat, response within one business day</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Quarterly async audit via Loom and checklist</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Reporting Dashboard</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support (response within one business day)</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Quarterly async audit via Loom</li>
                     </ul>
                     <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
@@ -1769,7 +1760,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>No. We handle all the setup. You get a simple dashboard to see what's happening, but the system runs itself. If you can send a text, you can use Venue OS.</p>
+                    <p>No. We handle all the setup. You get a simple dashboard to see what's happening, but the system runs itself. If you can send a text, you can use BevAlc OS.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1778,7 +1769,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Venue OS works alongside your existing tools and does not replace your POS or ticketing. You get a dedicated booking calendar you can embed on your website or link to directly. We connect your Google Business Profile for reviews. Your existing systems stay exactly as they are.</p>
+                    <p>BevAlc OS works alongside your existing tools and does not replace your POS or ticketing. You get a dedicated booking calendar you can embed on your website or link to directly. We connect your Google Business Profile for reviews. Your existing systems stay exactly as they are.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1823,7 +1814,7 @@
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Venue OS is built specifically for craft beverage venues, including distilleries, breweries, wineries, tasting rooms, and whiskey bars. If you host tastings, tours, or events, this is for you.</p>
+                    <p>BevAlc OS is built specifically for craft beverage venues, including distilleries, breweries, wineries, tasting rooms, and whiskey bars. If you host tastings, tours, or events, this is for you.</p>
                 </div>
             </div>
         </div>
@@ -1839,7 +1830,7 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     Watch Demo
                 </a>
-                <a href="mailto:hey@venueos.com" class="btn btn-secondary">Email Us a Question</a>
+                <a href="mailto:hey@bevalcos.com" class="btn btn-secondary">Email Us a Question</a>
             </div>
         </div>
     </section>
@@ -1847,7 +1838,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <div class="footer-logo">Venue OS</div>
+            <div class="footer-logo">BevAlc OS</div>
             <div class="footer-links">
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
@@ -1856,7 +1847,7 @@
                 <a href="#">Terms</a>
             </div>
             <div class="footer-contact">
-                Questions? <a href="mailto:hey@venueos.com">hey@venueos.com</a>
+                Questions? <a href="mailto:hey@bevalcos.com">hey@bevalcos.com</a>
             </div>
         </div>
         <div class="footer-compliance">
@@ -1897,13 +1888,4 @@
 
         // Add scroll effect to nav
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 4px 20px rgba(45, 41, 38, 0.08)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
-    </script>
-</body>
-</html>
+            const n
