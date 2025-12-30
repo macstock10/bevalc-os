@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | BevAlc OS</title>
+    <meta name="description" content="Guides and insights for distilleries, breweries, wineries, and tasting rooms. Learn how to get more reviews, reduce no-shows, and bring guests back.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --copper: #B87333;
+            --copper-light: #D4956A;
+            --copper-dark: #8B5A2B;
+            --cream: #FAF7F2;
+            --cream-dark: #F0EBE3;
+            --charcoal: #2D2926;
+            --charcoal-light: #4A4543;
+            --forest: #2C3E2D;
+            --wine: #722F37;
+            --white: #FFFFFF;
+            --shadow-soft: 0 4px 20px rgba(45, 41, 38, 0.08);
+            --shadow-medium: 0 8px 40px rgba(45, 41, 38, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--copper);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(184, 115, 51, 0.1);
+        }
+
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo:hover {
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--copper), var(--copper-dark));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--charcoal-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--copper);
+            text-decoration: none;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--copper), var(--copper-dark));
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(184, 115, 51, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Header */
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: var(--cream);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: var(--charcoal-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Articles Grid */
+        .articles-section {
+            padding: 2rem 2rem 6rem;
+        }
+
+        .articles-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            color: var(--charcoal);
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            text-decoration: none;
+        }
+
+        .article-card-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(184, 115, 51, 0.1);
+            color: var(--copper-dark);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .article-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .article-card p {
+            color: var(--charcoal-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .article-card-meta {
+            font-size: 0.85rem;
+            color: var(--charcoal-light);
+        }
+
+        .article-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--copper);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .article-card-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            transition: transform 0.2s;
+        }
+
+        .article-card:hover .article-card-link svg {
+            transform: translateX(4px);
+        }
+
+        /* Empty State */
+        .coming-soon {
+            text-align: center;
+            padding: 3rem;
+            background: var(--cream-dark);
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+
+        .coming-soon h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .coming-soon p {
+            color: var(--charcoal-light);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--charcoal);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(250, 247, 242, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--copper-light);
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: rgba(250, 247, 242, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links a:not(.btn) {
+                display: none;
+            }
+
+            .page-header {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .article-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            BevAlc OS
+        </a>
+        <div class="nav-links">
+            <a href="/#features">Features</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/articles">Articles</a>
+            <a href="/#demo" class="btn btn-primary">Watch Demo</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Articles</h1>
+        <p>Practical guides for distilleries, breweries, wineries, and tasting rooms. No fluff—just what works.</p>
+    </header>
+
+    <!-- Articles -->
+    <section class="articles-section">
+        <div class="articles-container">
+            
+            <!-- Article 1 -->
+            <a href="/articles/google-reviews-guide.html" class="article-card">
+                <span class="article-card-tag">Reviews</span>
+                <h2>Google Reviews Are Your New Front Door</h2>
+                <p>How craft beverage venues get found, get chosen, and get more foot traffic. The data on what actually moves the needle—and what's now illegal.</p>
+                <span class="article-card-link">
+                    Read article
+                    <svg viewBox="0 0 24 24" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+            </a>
+
+            <!-- Coming Soon -->
+            <div class="coming-soon">
+                <h3>More articles coming soon</h3>
+                <p>Guides on reducing no-shows, bringing guests back, and managing private events.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">BevAlc OS</div>
+        <div class="footer-links">
+            <a href="/#features">Features</a>
+            <a href="/#pricing">Pricing</a>
+            <a href="/articles">Articles</a>
+            <a href="mailto:hey@bevalcos.com">Contact</a>
+        </div>
+        <p class="footer-copy">© 2025 BevAlc OS. All rights reserved.</p>
+    </footer>
+</body>
+</html>
