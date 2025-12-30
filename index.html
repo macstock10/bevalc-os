@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BevAlc OS | The Operating System for Craft Beverage Venues</title>
+    <meta name="description" content="Stop running a Franken-stack. BevAlc OS connects your POS, bookings, and guest communication into one system. Built for distilleries, breweries, wineries, and tasting rooms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,6 +24,7 @@
     ║  LINKS (replace with your actual links):                                  ║
     ║    Demo video: #demo (replace with Loom link)                             ║
     ║    Checkout: # (replace with Stripe link)                                 ║
+    ║    Articles: /articles (future)                                           ║
     ║                                                                           ║
     ╚═══════════════════════════════════════════════════════════════════════════╝
     -->
@@ -254,24 +256,9 @@
         .hero-description {
             font-size: 1.2rem;
             color: var(--charcoal-light);
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-        }
-
-        .hero-venue-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
             margin-bottom: 2rem;
-        }
-
-        .venue-tag {
-            padding: 0.4rem 0.9rem;
-            background: var(--white);
-            border: 1px solid var(--cream-dark);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            color: var(--charcoal-light);
+            max-width: 500px;
+            line-height: 1.7;
         }
 
         .hero-ctas {
@@ -285,164 +272,228 @@
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        .hero-mockup {
+        /* Franken-Stack Visual */
+        .stack-visual {
             background: var(--white);
             border-radius: 24px;
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: var(--shadow-strong);
         }
 
-        .mockup-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+        .stack-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--cream-dark);
-            margin-bottom: 1rem;
         }
 
-        .mockup-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .mockup-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--cream-dark);
-        }
-
-        .mockup-dot:first-child { background: #FF6B6B; }
-        .mockup-dot:nth-child(2) { background: #FFD93D; }
-        .mockup-dot:nth-child(3) { background: #6BCB77; }
-
-        .mockup-title {
-            font-size: 0.8rem;
+        .stack-header h3 {
+            font-size: 1rem;
             color: var(--charcoal-light);
-            flex: 1;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        .stack-before-after {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .stack-column {
             text-align: center;
         }
 
-        .mockup-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .mockup-stat {
-            background: var(--cream);
-            border-radius: 12px;
-            padding: 1rem;
-        }
-
-        .mockup-stat-label {
-            font-size: 0.75rem;
-            color: var(--charcoal-light);
-            margin-bottom: 0.25rem;
-        }
-
-        .mockup-stat-value {
-            font-family: 'Fraunces', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--charcoal);
-        }
-
-        .mockup-stat-value.positive { color: var(--forest); }
-        .mockup-stat-value.copper { color: var(--copper); }
-
-        .mockup-activity {
-            grid-column: span 2;
-            background: var(--cream);
-            border-radius: 12px;
-            padding: 1rem;
-        }
-
-        .mockup-activity-header {
-            font-size: 0.75rem;
+        .stack-column-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             color: var(--charcoal-light);
             margin-bottom: 0.75rem;
         }
 
-        .activity-item {
+        .stack-icons {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(45, 41, 38, 0.06);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
         }
 
-        .activity-item:last-child {
-            border-bottom: none;
-        }
-
-        .activity-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+        .stack-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cream);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .activity-icon.green { background: rgba(44, 62, 45, 0.1); color: var(--forest); }
-        .activity-icon.copper { background: rgba(184, 115, 51, 0.1); color: var(--copper); }
-        .activity-icon.wine { background: rgba(114, 47, 55, 0.1); color: var(--wine); }
-
-        .activity-icon svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .activity-text {
             font-size: 0.8rem;
-            color: var(--charcoal);
+            position: relative;
         }
 
-        .activity-time {
-            font-size: 0.7rem;
-            color: var(--charcoal-light);
+        .stack-icon.disconnected::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background: var(--wine);
+            border-radius: 50%;
+        }
+
+        .stack-icon.connected {
+            background: rgba(44, 62, 45, 0.1);
+        }
+
+        .stack-icon.connected::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background: var(--forest);
+            border-radius: 50%;
+        }
+
+        .stack-arrow {
+            font-size: 1.5rem;
+            color: var(--copper);
+        }
+
+        .stack-unified {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stack-unified-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--copper), var(--copper-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .stack-unified-label {
+            font-size: 0.75rem;
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 6rem 2rem;
+            background: var(--charcoal);
+            color: var(--cream);
+        }
+
+        .problem-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .problem-intro {
+            font-size: 1.15rem;
+            color: rgba(250, 247, 242, 0.8);
+            margin-bottom: 3rem;
+            max-width: 700px;
             margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
-        /* Venue Types Section */
+        .problem-stack {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .problem-stack-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--copper-light);
+            margin-bottom: 1rem;
+        }
+
+        .problem-stack-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .problem-stack-item {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            color: rgba(250, 247, 242, 0.7);
+        }
+
+        .problem-question {
+            font-size: 1.1rem;
+            color: rgba(250, 247, 242, 0.9);
+            line-height: 1.8;
+        }
+
+        .problem-question strong {
+            color: var(--copper-light);
+        }
+
+        /* Venue Types */
         .venue-types {
             padding: 5rem 2rem;
-            background: var(--white);
+            background: var(--cream-dark);
         }
 
         .venue-types-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
 
         .venue-types h2 {
             font-size: clamp(1.75rem, 3vw, 2.25rem);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .venue-types-subtitle {
             color: var(--charcoal-light);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
         }
 
         .venue-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .venue-card {
-            padding: 2rem 1rem;
-            background: var(--cream);
+            background: var(--white);
             border-radius: 16px;
-            transition: all 0.3s ease;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .venue-card:hover {
@@ -451,15 +502,8 @@
         }
 
         .venue-card-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 1rem;
-            background: var(--white);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
         }
 
         .venue-card h4 {
@@ -472,103 +516,10 @@
             color: var(--charcoal-light);
         }
 
-        /* Problem Section */
-        .problem {
-            padding: 6rem 2rem;
-            background: var(--charcoal);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.03;
-            pointer-events: none;
-        }
-
-        .problem-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-        }
-
-        .problem h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .problem-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3rem;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            text-align: left;
-        }
-
-        .problem-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .problem-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--copper);
-            transform: translateY(-4px);
-        }
-
-        .problem-item-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(184, 115, 51, 0.2);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        .problem-item-icon svg {
-            width: 20px;
-            height: 20px;
-            stroke: var(--copper-light);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .problem-item h4 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--white);
-        }
-
-        .problem-item p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.5;
-        }
-
         /* Features Section */
         .features {
             padding: 6rem 2rem;
+            background: var(--white);
         }
 
         .features-container {
@@ -587,62 +538,49 @@
         }
 
         .features-header p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--charcoal-light);
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--cream-dark);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            box-shadow: var(--shadow-medium);
-            transform: translateY(-4px);
-        }
-
-        .feature-card.featured {
-            grid-column: span 2;
+        .feature-block {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            background: linear-gradient(135deg, var(--charcoal) 0%, var(--forest) 100%);
-            color: var(--white);
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+            padding-bottom: 5rem;
+            border-bottom: 1px solid var(--cream-dark);
         }
 
-        .feature-card.featured .feature-content h3 {
-            color: var(--white);
+        .feature-block:nth-child(even) {
+            direction: rtl;
         }
 
-        .feature-card.featured .feature-content p {
-            color: rgba(255, 255, 255, 0.7);
+        .feature-block:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .feature-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .feature-content {
+            padding: 1rem 0;
         }
 
         .feature-icon {
             width: 48px;
             height: 48px;
-            background: var(--cream);
+            background: rgba(184, 115, 51, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.25rem;
-        }
-
-        .feature-card.featured .feature-icon {
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .feature-icon svg {
@@ -653,90 +591,71 @@
             stroke-width: 2;
         }
 
-        .feature-card.featured .feature-icon svg {
-            stroke: var(--copper-light);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-card p {
-            color: var(--charcoal-light);
+        .feature-content h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            line-height: 1.6;
+            color: var(--charcoal);
         }
 
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+        .feature-content p {
             color: var(--charcoal-light);
+            margin-bottom: 1.25rem;
+            line-height: 1.7;
         }
 
-        .feature-card.featured .feature-list li {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .feature-list li svg {
-            width: 16px;
-            height: 16px;
-            stroke: var(--forest);
-            fill: none;
-            stroke-width: 2.5;
-            flex-shrink: 0;
-        }
-
-        .feature-card.featured .feature-list li svg {
-            stroke: var(--copper-light);
+        .feature-content .highlight {
+            background: rgba(184, 115, 51, 0.1);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--copper);
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 0.95rem;
         }
 
         .feature-visual {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .feature-phone {
-            width: 200px;
-            background: var(--charcoal);
+        /* Phone mockup for features */
+        .phone-mockup {
+            width: 240px;
+            background: var(--white);
             border-radius: 24px;
-            padding: 0.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            box-shadow: var(--shadow-medium);
         }
 
-        .feature-phone-screen {
-            background: var(--white);
-            border-radius: 20px;
+        .phone-screen {
+            background: var(--cream);
+            border-radius: 16px;
             padding: 1rem;
-            min-height: 280px;
         }
 
         .phone-message {
-            background: var(--cream);
-            border-radius: 12px 12px 12px 4px;
-            padding: 0.75rem 1rem;
-            font-size: 0.75rem;
-            margin-bottom: 0.75rem;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
             color: var(--charcoal);
+            box-shadow: var(--shadow-soft);
         }
 
         .phone-message.outgoing {
             background: var(--copper);
             color: var(--white);
-            border-radius: 12px 12px 4px 12px;
-            margin-left: 1.5rem;
+            margin-left: 1rem;
         }
 
         .phone-message-time {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             color: var(--charcoal-light);
             margin-top: 0.25rem;
         }
@@ -745,191 +664,114 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* How It Installs Section */
-        .how-installs {
-            padding: 5rem 2rem;
-            background: var(--white);
-        }
-
-        .how-installs-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .how-installs-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .how-installs-header h2 {
-            font-size: clamp(1.75rem, 3vw, 2.25rem);
-            margin-bottom: 0.75rem;
-        }
-
-        .how-installs-header p {
-            color: var(--charcoal-light);
-        }
-
-        .install-items {
+        /* Stats visual */
+        .stats-visual {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
-        .install-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .install-item-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 1rem;
-            background: var(--cream);
+        .stat-card {
+            background: var(--white);
             border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .install-item-icon svg {
-            width: 28px;
-            height: 28px;
-            stroke: var(--copper);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .install-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .install-item p {
-            font-size: 0.9rem;
-            color: var(--charcoal-light);
-            line-height: 1.5;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            padding: 6rem 2rem;
-            background: var(--cream-dark);
-        }
-
-        .how-it-works-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .how-it-works-header {
+            padding: 1.25rem;
             text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .how-it-works-header h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            margin-bottom: 1rem;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-        }
-
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--copper) 0%, var(--copper-light) 100%);
-            z-index: 0;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border: 3px solid var(--copper);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
             box-shadow: var(--shadow-soft);
         }
 
-        .step-number svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--copper);
-            fill: none;
-            stroke-width: 2;
+        .stat-card-value {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--copper);
+            margin-bottom: 0.25rem;
         }
 
-        .step h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .step p {
-            font-size: 0.9rem;
+        .stat-card-label {
+            font-size: 0.75rem;
             color: var(--charcoal-light);
         }
 
-        /* ROI Box */
+        /* ROI Section */
         .roi-section {
-            padding: 4rem 2rem;
-            background: var(--cream);
+            padding: 5rem 2rem;
+            background: var(--cream-dark);
         }
 
         .roi-container {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .roi-box {
-            background: linear-gradient(135deg, var(--forest) 0%, var(--charcoal) 100%);
-            border-radius: 24px;
+            background: var(--white);
+            border-radius: 20px;
             padding: 3rem;
             text-align: center;
-            color: var(--white);
+            box-shadow: var(--shadow-medium);
         }
 
         .roi-box h3 {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             margin-bottom: 1rem;
-            color: var(--white);
         }
 
         .roi-box p {
+            color: var(--charcoal-light);
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .roi-box .highlight {
-            color: var(--copper-light);
+            color: var(--copper);
+            font-weight: 600;
+        }
+
+        .roi-consolidation {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        .roi-consolidation-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--charcoal-light);
+            margin-bottom: 1rem;
+        }
+
+        .roi-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .roi-tool {
+            padding: 0.4rem 0.75rem;
+            background: var(--cream);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--charcoal-light);
+            text-decoration: line-through;
+        }
+
+        .roi-savings {
+            font-size: 1rem;
+            color: var(--forest);
             font-weight: 600;
         }
 
         /* Pricing */
         .pricing {
             padding: 6rem 2rem;
+            background: var(--cream);
         }
 
         .pricing-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -939,8 +781,8 @@
         }
 
         .pricing-header h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            margin-bottom: 1rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
         }
 
         .pricing-header p {
@@ -949,11 +791,6 @@
 
         .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .pricing-cards.single {
             grid-template-columns: 1fr;
             max-width: 500px;
             margin: 0 auto;
@@ -964,35 +801,7 @@
             border-radius: 24px;
             padding: 2.5rem;
             box-shadow: var(--shadow-soft);
-            border: 2px solid var(--cream-dark);
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            box-shadow: var(--shadow-medium);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--copper);
-            position: relative;
-        }
-
-        .pricing-cards.single .pricing-card.featured::before {
-            display: none;
-        }
-
-        .pricing-card.featured::before {
-            content: 'Most Popular';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--copper);
-            color: var(--white);
-            padding: 0.35rem 1rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            border: 2px solid var(--copper);
         }
 
         .pricing-card-name {
@@ -1003,7 +812,7 @@
         }
 
         .pricing-card-description {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--charcoal-light);
             margin-bottom: 1.5rem;
         }
@@ -1034,13 +843,13 @@
         }
 
         .pricing-card-setup {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--charcoal-light);
             margin-bottom: 1rem;
         }
 
         .pricing-card-billing {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--charcoal-light);
             margin-bottom: 2rem;
             padding-bottom: 2rem;
@@ -1121,6 +930,7 @@
             fill: none;
             stroke-width: 2;
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .faq-item.open .faq-question svg {
@@ -1141,7 +951,7 @@
 
         .faq-answer p {
             color: var(--charcoal-light);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* CTA */
@@ -1160,67 +970,56 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(ellipse at center, rgba(184, 115, 51, 0.15) 0%, transparent 50%);
+            background: radial-gradient(ellipse at center, rgba(184, 115, 51, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .cta-container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             position: relative;
         }
 
         .cta h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-size: clamp(2rem, 4vw, 2.5rem);
             color: var(--white);
             margin-bottom: 1rem;
         }
 
         .cta p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            color: rgba(250, 247, 242, 0.8);
             margin-bottom: 2rem;
         }
 
         .cta-buttons {
             display: flex;
-            justify-content: center;
             gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
-        }
-
-        .cta .btn-secondary {
-            background: transparent;
-            border-color: rgba(255, 255, 255, 0.3);
-            color: var(--white);
-        }
-
-        .cta .btn-secondary:hover {
-            border-color: var(--white);
-            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Footer */
         footer {
-            padding: 3rem 2rem 2rem;
+            padding: 4rem 2rem 2rem;
             background: var(--charcoal);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--cream);
         }
 
         .footer-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .footer-logo {
             font-family: 'Fraunces', serif;
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--white);
         }
 
         .footer-links {
@@ -1229,19 +1028,14 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(250, 247, 242, 0.7);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-contact {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            color: var(--copper-light);
         }
 
         .footer-contact a {
@@ -1250,103 +1044,85 @@
         }
 
         .footer-compliance {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250, 247, 242, 0.1);
             text-align: center;
         }
 
         .footer-compliance p {
             font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(250, 247, 242, 0.5);
             line-height: 1.6;
         }
 
         /* Responsive */
-        @media (max-width: 1000px) {
-            .venue-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .feature-card.featured {
-                grid-column: span 1;
-                grid-template-columns: 1fr;
-            }
-
-            .feature-visual {
-                display: none;
-            }
-
-            .install-items {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
         @media (max-width: 900px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .hero-content {
-                order: 1;
-            }
-
-            .hero-visual {
-                order: 2;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
             .hero-description {
-                margin: 0 auto 1.5rem;
-            }
-
-            .hero-venue-types {
-                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .hero-ctas {
                 justify-content: center;
             }
 
-            .problem-grid,
-            .pricing-cards {
+            .venue-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .feature-block,
+            .feature-block:nth-child(even) {
                 grid-template-columns: 1fr;
-            }
-
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .steps::before {
-                display: none;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                gap: 1.5rem;
+                direction: ltr;
                 text-align: center;
+            }
+
+            .feature-content {
+                order: 1;
+            }
+
+            .feature-visual {
+                order: 2;
+            }
+
+            .stack-before-after {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stack-arrow {
+                transform: rotate(90deg);
             }
         }
 
         @media (max-width: 600px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links a:not(.btn) {
+                display: none;
+            }
+
             .venue-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .steps {
-                grid-template-columns: 1fr;
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
@@ -1362,7 +1138,6 @@
         </a>
         <div class="nav-links">
             <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
             <a href="#demo" class="btn btn-primary">Watch Demo</a>
@@ -1374,67 +1149,42 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="hero-badge-dot"></span>
-                    Built for craft beverage venues
+                    <div class="hero-badge-dot"></div>
+                    Built for tasting rooms
                 </div>
-                <h1>The Operating System for <span>BevAlc Venues</span></h1>
-                <p class="hero-description">Bookings, follow-up, reviews, and guest reactivation running on autopilot. Stop losing revenue and start filling your tasting room.</p>
-                <div class="hero-venue-types">
-                    <span class="venue-tag">Distilleries</span>
-                    <span class="venue-tag">Breweries</span>
-                    <span class="venue-tag">Wineries</span>
-                    <span class="venue-tag">Tasting Rooms</span>
-                    <span class="venue-tag">Whiskey Bars</span>
-                </div>
+                <h1>Your POS doesn't talk to your email. <span>We fix that.</span></h1>
+                <p class="hero-description">BevAlc OS connects the dots between transactions and follow-up. Missed calls get answered. Guests get reminded. Reviews happen on autopilot. Past visitors come back.</p>
                 <div class="hero-ctas">
                     <a href="#demo" class="btn btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                         Watch Demo
                     </a>
                     <a href="#pricing" class="btn btn-secondary">See Pricing</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-mockup">
-                    <div class="mockup-header">
-                        <div class="mockup-dots">
-                            <span class="mockup-dot"></span>
-                            <span class="mockup-dot"></span>
-                            <span class="mockup-dot"></span>
-                        </div>
-                        <span class="mockup-title">BevAlc OS Dashboard</span>
+                <div class="stack-visual">
+                    <div class="stack-header">
+                        <h3>From Franken-stack to unified system</h3>
                     </div>
-                    <div class="mockup-content">
-                        <div class="mockup-stat">
-                            <div class="mockup-stat-label">Bookings This Week</div>
-                            <div class="mockup-stat-value positive">↑ Up</div>
-                        </div>
-                        <div class="mockup-stat">
-                            <div class="mockup-stat-label">Leads Recovered</div>
-                            <div class="mockup-stat-value copper">Active</div>
-                        </div>
-                        <div class="mockup-activity">
-                            <div class="mockup-activity-header">Recent Activity</div>
-                            <div class="activity-item">
-                                <div class="activity-icon green">
-                                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                </div>
-                                <span class="activity-text">New booking confirmed</span>
-                                <span class="activity-time">Just now</span>
+                    <div class="stack-before-after">
+                        <div class="stack-column">
+                            <div class="stack-column-label">Before: Disconnected</div>
+                            <div class="stack-icons">
+                                <div class="stack-icon disconnected">POS</div>
+                                <div class="stack-icon disconnected">📧</div>
+                                <div class="stack-icon disconnected">📅</div>
+                                <div class="stack-icon disconnected">⭐</div>
+                                <div class="stack-icon disconnected">📱</div>
+                                <div class="stack-icon disconnected">📝</div>
                             </div>
-                            <div class="activity-item">
-                                <div class="activity-icon copper">
-                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                </div>
-                                <span class="activity-text">New Google review</span>
-                                <span class="activity-time">15m ago</span>
-                            </div>
-                            <div class="activity-item">
-                                <div class="activity-icon wine">
-                                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.32 1.6.56 2.37"/></svg>
-                                </div>
-                                <span class="activity-text">Missed call recovered</span>
-                                <span class="activity-time">1h ago</span>
+                        </div>
+                        <div class="stack-arrow">→</div>
+                        <div class="stack-column">
+                            <div class="stack-column-label">After: Connected</div>
+                            <div class="stack-unified">
+                                <div class="stack-unified-icon">BevAlc OS</div>
+                                <div class="stack-unified-label">Everything in sync</div>
                             </div>
                         </div>
                     </div>
@@ -1443,11 +1193,34 @@
         </div>
     </section>
 
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="problem-container">
+            <h2>You're running a Franken-stack.</h2>
+            <p class="problem-intro">Toast for payments. Tock for reservations. Mailchimp for emails. A spreadsheet for private events. A sticky note for follow-ups. None of it talks to each other.</p>
+            
+            <div class="problem-stack">
+                <div class="problem-stack-title">Sound familiar?</div>
+                <div class="problem-stack-list">
+                    <span class="problem-stack-item">POS</span>
+                    <span class="problem-stack-item">Reservation system</span>
+                    <span class="problem-stack-item">Email marketing</span>
+                    <span class="problem-stack-item">SMS tool</span>
+                    <span class="problem-stack-item">Review platform</span>
+                    <span class="problem-stack-item">Event spreadsheet</span>
+                    <span class="problem-stack-item">Club management</span>
+                </div>
+            </div>
+            
+            <p class="problem-question">When someone books a tasting, do they <strong>automatically</strong> get a reminder? When they visit, do they get a review request? When they don't come back for 90 days, does anyone notice?<br><br>Right now, <strong>you're</strong> the integration layer. And it's burning your time.</p>
+        </div>
+    </section>
+
     <!-- Venue Types -->
     <section class="venue-types">
         <div class="venue-types-container">
-            <h2>Built for Craft Beverage Venues</h2>
-            <p class="venue-types-subtitle">One system designed for how your venue actually operates.</p>
+            <h2>We only work with tasting rooms.</h2>
+            <p class="venue-types-subtitle">Not restaurants. Not retail. Not generic "hospitality."</p>
             <div class="venue-grid">
                 <div class="venue-card">
                     <div class="venue-card-icon">🥃</div>
@@ -1457,12 +1230,12 @@
                 <div class="venue-card">
                     <div class="venue-card-icon">🍺</div>
                     <h4>Breweries</h4>
-                    <p>Taprooms & events</p>
+                    <p>Taproom traffic</p>
                 </div>
                 <div class="venue-card">
                     <div class="venue-card-icon">🍷</div>
                     <h4>Wineries</h4>
-                    <p>Tastings & clubs</p>
+                    <p>Club & DtC</p>
                 </div>
                 <div class="venue-card">
                     <div class="venue-card-icon">🥂</div>
@@ -1471,46 +1244,8 @@
                 </div>
                 <div class="venue-card">
                     <div class="venue-card-icon">🍸</div>
-                    <h4>Whiskey Bars</h4>
-                    <p>Events & private parties</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem -->
-    <section class="problem">
-        <div class="problem-container">
-            <h2>Right now, you're leaking revenue.</h2>
-            <p class="problem-subtitle">You don't need another marketing tool. You need a system that runs while you focus on guests.</p>
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <div class="problem-item-icon">
-                        <svg viewBox="0 0 24 24"><path d="M15.05 5A5 5 0 0119 8.95M15.05 1A9 9 0 0123 8.94m-1 7.98v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.32 1.6.56 2.37"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-                    </div>
-                    <h4>Missed calls become lost bookings</h4>
-                    <p>Your phone rings while you're pouring. The caller moves on to the next venue on Google.</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-item-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h4>No-shows waste your time</h4>
-                    <p>Without reminders, a significant portion of bookings don't show up. That's empty seats and lost revenue.</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-item-icon">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                    </div>
-                    <h4>One-time visitors never return</h4>
-                    <p>They loved the experience, bought a bottle, and you never heard from them again.</p>
-                </div>
-                <div class="problem-item">
-                    <div class="problem-item-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    </div>
-                    <h4>Invisible on Google</h4>
-                    <p>Not enough reviews means you're losing to competitors who show up first.</p>
+                    <h4>Cocktail Bars</h4>
+                    <p>Events & parties</p>
                 </div>
             </div>
         </div>
@@ -1520,184 +1255,192 @@
     <section class="features" id="features">
         <div class="features-container">
             <div class="features-header">
-                <h2>Everything your venue needs. Nothing it doesn't.</h2>
-                <p>Six core features that work together to capture leads, fill bookings, and bring guests back.</p>
+                <h2>Six features. Zero grunt work.</h2>
+                <p>Everything your tasting room needs to capture leads, fill bookings, and bring guests back. Nothing it doesn't.</p>
             </div>
-            <div class="features-grid">
-                <!-- Featured Card: Missed Call Recovery -->
-                <div class="feature-card featured">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                        </div>
-                        <h3>Missed Call Text-Back</h3>
-                        <p>Every missed call gets an instant text. Leads don't die; they book.</p>
-                        <ul class="feature-list">
-                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Automatic response to every missed call</li>
-                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Customizable message with booking link</li>
-                            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Two-way conversation in shared inbox</li>
-                        </ul>
+
+            <!-- Feature 1: Missed Call -->
+            <div class="feature-block">
+                <div class="feature-content">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
                     </div>
-                    <div class="feature-visual">
-                        <div class="feature-phone">
-                            <div class="feature-phone-screen">
-                                <div class="phone-message">
-                                    Missed call from (502) 555-0147
-                                    <div class="phone-message-time">Just now</div>
-                                </div>
-                                <div class="phone-message outgoing">
-                                    Hey! Sorry we missed your call at Oak & Vine. Want to book a tasting? Reply here or book online: oak.vine/book
-                                    <div class="phone-message-time">Sent automatically</div>
-                                </div>
-                                <div class="phone-message">
-                                    Yes! Do you have Saturday at 2pm?
-                                    <div class="phone-message-time">1 min ago</div>
-                                </div>
+                    <h3>Missed Call Text-Back</h3>
+                    <p>Your phone rings while you're pouring a flight. By the time you check, they've already booked somewhere else.</p>
+                    <p>BevAlc OS texts them back instantly. They reply. You respond when you can. The lead doesn't die.</p>
+                    <div class="highlight">"Hey! Sorry we missed your call at Oak & Vine. Want to book a tasting? Reply here or book online."</div>
+                </div>
+                <div class="feature-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-message">
+                                Missed call from (502) 555-0147
+                                <div class="phone-message-time">Just now</div>
+                            </div>
+                            <div class="phone-message outgoing">
+                                Hey! Sorry we missed your call. Want to book a tasting? Reply here or book online: oak.vine/book
+                                <div class="phone-message-time">Sent automatically</div>
+                            </div>
+                            <div class="phone-message">
+                                Yes! Saturday at 2pm?
+                                <div class="phone-message-time">1 min ago</div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Event Booking -->
-                <div class="feature-card">
+            <!-- Feature 2: Reminders -->
+            <div class="feature-block">
+                <div class="feature-content">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    </div>
-                    <h3>Event Booking</h3>
-                    <p>Online scheduling for tours, tastings, and events. Guests book themselves around the clock.</p>
-                    <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Embeddable booking calendar</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Automatic confirmations</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Capacity limits per slot</li>
-                    </ul>
-                </div>
-
-                <!-- Reminders -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
                     <h3>Smart Reminders</h3>
-                    <p>Day-before and day-of reminders that materially reduce no-shows.</p>
-                    <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SMS and email reminders</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Confirmation requests</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Easy rescheduling</li>
-                    </ul>
+                    <p>No-shows aren't forgetful. They're unreminded.</p>
+                    <p>Day-before: "See you tomorrow at 2pm." Day-of: "We're ready for you. Here's the address."</p>
+                    <p>Confirmation rate goes up. Empty seats go down.</p>
+                    <div class="highlight">Guests can confirm or reschedule by replying. No app download. No friction.</div>
                 </div>
+                <div class="feature-visual">
+                    <div class="stats-visual">
+                        <div class="stat-card">
+                            <div class="stat-card-value">↓</div>
+                            <div class="stat-card-label">No-shows</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">↑</div>
+                            <div class="stat-card-label">Confirmations</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">2</div>
+                            <div class="stat-card-label">Touchpoints</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">0</div>
+                            <div class="stat-card-label">Manual work</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Review Engine -->
-                <div class="feature-card">
+            <!-- Feature 3: Reviews -->
+            <div class="feature-block">
+                <div class="feature-content">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <h3>Review Engine</h3>
-                    <p>Automatically request Google reviews after every visit. More reviews means more bookings.</p>
-                    <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Post-visit review requests</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Direct link to Google</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Filter unhappy guests first</li>
-                    </ul>
+                    <p>Your Google rating is your new homepage. One star drop means tourists pick the place next door.</p>
+                    <p>Two hours after every visit, guests get a text with a direct link to leave a review. No app. No friction. Just stars.</p>
+                    <div class="highlight">"Thanks for visiting Oak & Vine! If you enjoyed it, a quick Google review helps us a lot."</div>
                 </div>
-
-                <!-- Private Events -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                <div class="feature-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-message outgoing">
+                                Thanks for visiting Oak & Vine today! If you enjoyed the tasting, we'd love a quick Google review 🙏
+                                <div class="phone-message-time">2 hours after visit</div>
+                            </div>
+                            <div class="phone-message">
+                                Done! Left you 5 stars. The bourbon was incredible.
+                                <div class="phone-message-time">10 min later</div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Private Events Pipeline</h3>
-                    <p>Manage wedding inquiries, corporate events, and private parties without dropping the ball.</p>
-                    <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Inquiry capture forms</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Automated follow-up sequence</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pipeline tracking</li>
-                    </ul>
                 </div>
+            </div>
 
-                <!-- Reactivation -->
-                <div class="feature-card">
+            <!-- Feature 4: Reactivation -->
+            <div class="feature-block">
+                <div class="feature-content">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
                     </div>
                     <h3>Guest Reactivation</h3>
-                    <p>Bring past visitors back with automated seasonal campaigns and new release announcements.</p>
-                    <ul class="feature-list">
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Timed re-engagement sequences</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Seasonal campaign templates</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Birthday and anniversary triggers</li>
-                    </ul>
+                    <p>They loved the tasting. Bought a bottle. Signed the guest book. And you never heard from them again.</p>
+                    <p>BevAlc OS notices. At 30 days, 60 days, 90 days—they get a nudge. New releases. Upcoming events. A reason to come back.</p>
+                    <div class="highlight">"It's been a minute since your visit to Oak & Vine. We just released a limited bourbon. Book your next tasting?"</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Installs -->
-    <section class="how-installs">
-        <div class="how-installs-container">
-            <div class="how-installs-header">
-                <h2>How It Connects to Your Venue</h2>
-                <p>Works alongside your existing tools. No ripping and replacing.</p>
-            </div>
-            <div class="install-items">
-                <div class="install-item">
-                    <div class="install-item-icon">
-                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <div class="feature-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-message outgoing">
+                                Hey Sarah! It's been a while since your visit to Oak & Vine. We just dropped a new single barrel. Want to be first to try it?
+                                <div class="phone-message-time">30 days after visit</div>
+                            </div>
+                            <div class="phone-message">
+                                Yes! When can I come in?
+                                <div class="phone-message-time">2 hours later</div>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Calls</h4>
-                    <p>You get a dedicated tracking number. Keep your existing number or forward to us. Missed calls trigger automatic text-back.</p>
                 </div>
-                <div class="install-item">
-                    <div class="install-item-icon">
+            </div>
+
+            <!-- Feature 5: Private Events -->
+            <div class="feature-block">
+                <div class="feature-content">
+                    <div class="feature-icon">
                         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </div>
-                    <h4>Booking</h4>
-                    <p>Embed our calendar on your website or link to it directly. Works alongside Toast, Square, and Eventbrite. Reminders run automatically.</p>
+                    <h3>Private Events Pipeline</h3>
+                    <p>Wedding inquiries have a 24-hour shelf life. Respond slow, lose the booking. That's lead rot.</p>
+                    <p>BevAlc OS captures the lead, sends an instant response with your event packet, and reminds you to follow up. No more lost revenue.</p>
+                    <div class="highlight">Automated first response. Event packet attached. Follow-up reminder to you. Pipeline to track every inquiry.</div>
                 </div>
-                <div class="install-item">
-                    <div class="install-item-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <div class="feature-visual">
+                    <div class="stats-visual">
+                        <div class="stat-card">
+                            <div class="stat-card-value">&lt;5m</div>
+                            <div class="stat-card-label">Response time</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">📎</div>
+                            <div class="stat-card-label">Packet attached</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">🔔</div>
+                            <div class="stat-card-label">You get notified</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">📊</div>
+                            <div class="stat-card-label">Pipeline tracking</div>
+                        </div>
                     </div>
-                    <h4>Reviews</h4>
-                    <p>We connect your Google Business Profile. After visits, guests receive a review request linking directly to your Google listing.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="how-it-works-container">
-            <div class="how-it-works-header">
-                <h2>Up and running in days, not months.</h2>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">
-                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    </div>
-                    <h4>Watch the demo</h4>
-                    <p>See exactly what you're getting</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">
-                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                    </div>
-                    <h4>Pick your plan</h4>
-                    <p>Monthly subscription, cancel anytime</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">
+            <!-- Feature 6: Booking -->
+            <div class="feature-block">
+                <div class="feature-content">
+                    <div class="feature-icon">
                         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                     </div>
-                    <h4>Fill out one form</h4>
-                    <p>We handle the entire setup</p>
+                    <h3>Booking Calendar</h3>
+                    <p>Built for tastings, not table turns. Flexible group sizes. Linger-friendly timing. Not another Tock that blocks bookings that don't fit rigid templates.</p>
+                    <p>Embed on your website or link directly. Guests book. You get notified. The system takes over from there.</p>
+                    <div class="highlight">No marketplace tax on your own organic traffic. Just bookings that flow into your automation.</div>
                 </div>
-                <div class="step">
-                    <div class="step-number">
-                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <div class="feature-visual">
+                    <div class="stats-visual">
+                        <div class="stat-card">
+                            <div class="stat-card-value">📅</div>
+                            <div class="stat-card-label">Embed anywhere</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">👥</div>
+                            <div class="stat-card-label">Flexible groups</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">⚡</div>
+                            <div class="stat-card-label">Instant confirm</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-value">🔗</div>
+                            <div class="stat-card-label">Triggers automation</div>
+                        </div>
                     </div>
-                    <h4>Go live</h4>
-                    <p>Your system starts running</p>
                 </div>
             </div>
         </div>
@@ -1708,7 +1451,18 @@
         <div class="roi-container">
             <div class="roi-box">
                 <h3>Does this pay for itself?</h3>
-                <p>If you recover just <span class="highlight">a few missed calls per month</span> that turn into bookings, BevAlc OS covers its own cost. Add in fewer no-shows, more Google reviews driving new traffic, and past guests coming back on their own, and the math works quickly.</p>
+                <p>If you recover just <span class="highlight">two or three missed calls per month</span> that turn into bookings, BevAlc OS covers its cost. Add in fewer no-shows, more Google reviews driving traffic, and past guests coming back on autopilot—the math works fast.</p>
+                
+                <div class="roi-consolidation">
+                    <div class="roi-consolidation-title">Tools you might be paying for separately</div>
+                    <div class="roi-tools">
+                        <span class="roi-tool">Mailchimp $50+</span>
+                        <span class="roi-tool">Podium $250+</span>
+                        <span class="roi-tool">SMS tool $100+</span>
+                        <span class="roi-tool">Tock fees</span>
+                    </div>
+                    <div class="roi-savings">BevAlc OS consolidates guest communication into one system.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1720,8 +1474,8 @@
                 <h2>One plan. Everything included.</h2>
                 <p>Cancel anytime. No long-term contracts.</p>
             </div>
-            <div class="pricing-cards single">
-                <div class="pricing-card featured">
+            <div class="pricing-cards">
+                <div class="pricing-card">
                     <div class="pricing-card-name">BevAlc OS</div>
                     <div class="pricing-card-description">The complete system for craft beverage venues</div>
                     <div class="pricing-card-price">
@@ -1733,14 +1487,14 @@
                     <div class="pricing-card-billing">Subscription billed monthly. SMS and phone usage billed separately at cost (typically $20-50/month).</div>
                     <ul class="pricing-card-features">
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Missed Call Text-Back</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Event Booking Calendar</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Booking Calendar</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Smart Reminders (day-before + day-of)</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Review Engine (Google reviews on autopilot)</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Guest Reactivation (30/60/90 day sequences)</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Review Engine</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Guest Reactivation (30/60/90 day)</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Private Events Pipeline</li>
                         <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Reporting Dashboard</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support (response within one business day)</li>
-                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Quarterly async audit via Loom</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Done-for-you setup</li>
+                        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Priority support (same-day response)</li>
                     </ul>
                     <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
@@ -1752,69 +1506,76 @@
     <section class="faq" id="faq">
         <div class="faq-container">
             <div class="faq-header">
-                <h2>Questions? Answers below.</h2>
+                <h2>Questions?</h2>
             </div>
+            
             <div class="faq-item">
                 <div class="faq-question">
-                    Do I need to be tech-savvy?
+                    Does this replace my POS?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>No. We handle all the setup. You get a simple dashboard to see what's happening, but the system runs itself. If you can send a text, you can use BevAlc OS.</p>
+                    <p>No. BevAlc OS works alongside Toast, Square, Arryved, Commerce7, or whatever you're running. We're not trying to replace your POS—we turn transactions into follow-up. Your existing systems stay exactly where they are.</p>
                 </div>
             </div>
+
             <div class="faq-item">
                 <div class="faq-question">
-                    What if I already use Toast, Square, or Eventbrite?
+                    We're migrating from WineDirect to Commerce7. Will this make it worse?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>BevAlc OS works alongside your existing tools and does not replace your POS or ticketing. You get a dedicated booking calendar you can embed on your website or link to directly. We connect your Google Business Profile for reviews. Your existing systems stay exactly as they are.</p>
+                    <p>No. BevAlc OS sits on top of your tech stack. We connect to whatever you're using now and whatever you migrate to. One less thing to worry about during the transition.</p>
                 </div>
             </div>
+
             <div class="faq-item">
                 <div class="faq-question">
-                    How much time does this take me each week?
+                    Is this another "all-in-one" tool that does everything badly?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Plan on checking your shared inbox once or twice a day to respond to conversations that need a human touch. We provide reply templates for common questions. Everything else runs automatically in the background, including reminders, review requests, and reactivation.</p>
+                    <p>No. We do six things: missed call recovery, booking, reminders, reviews, reactivation, and private event follow-up. That's it. We don't touch your POS, your club management, or your inventory. We just make sure guests come back.</p>
                 </div>
             </div>
+
             <div class="faq-item">
                 <div class="faq-question">
-                    What are the usage fees?
+                    What about SMS compliance?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>SMS and phone usage are billed at cost to your card, separate from your subscription. Most venues see somewhere in the range of $20 to $50 per month depending on volume. During onboarding, we set up a dedicated phone number for your venue and configure your email sending. Billing is transparent and you can see usage anytime.</p>
+                    <p>All SMS is 10DLC registered and TCPA compliant. We handle opt-in language, STOP/HELP responses, and frequency disclosure during setup. We only message guests who opt in. Your compliance officer will be bored.</p>
                 </div>
             </div>
+
             <div class="faq-item">
                 <div class="faq-question">
-                    How does SMS compliance work?
+                    How much time does setup take me?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>All SMS messaging is fully compliant. We only send messages to guests who opt in, either when they book, inquire, or fill out a form on your site. Every message includes STOP to unsubscribe and HELP for support. We handle the compliance setup during onboarding, including adding opt-in language to your booking and inquiry forms.</p>
+                    <p>About 30 minutes of your time. You fill out one onboarding form with your business details, hours, and branding. We build everything else. You get a Loom walkthrough when it's ready. Most venues go live within a week.</p>
                 </div>
             </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What if I already use Tock or another booking tool?
+                    <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>You can keep using Tock for reservations if you want. BevAlc OS can work alongside it—we'd handle the follow-up automation (reminders, reviews, reactivation). Or you can use our booking calendar and stop paying marketplace fees on your own traffic. Your call.</p>
+                </div>
+            </div>
+
             <div class="faq-item">
                 <div class="faq-question">
                     Can I cancel anytime?
                     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </div>
                 <div class="faq-answer">
-                    <p>Yes. No long-term contracts and no cancellation fees. If it's not working for you, cancel with one email. We will help you export your data.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    What type of venues is this for?
-                    <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </div>
-                <div class="faq-answer">
-                    <p>BevAlc OS is built specifically for craft beverage venues, including distilleries, breweries, wineries, tasting rooms, and whiskey bars. If you host tastings, tours, or events, this is for you.</p>
+                    <p>Yes. No long-term contracts, no cancellation fees. If it's not working for you, cancel with one email. We'll help you export your data.</p>
                 </div>
             </div>
         </div>
@@ -1823,7 +1584,7 @@
     <!-- CTA -->
     <section class="cta" id="demo">
         <div class="cta-container">
-            <h2>Ready to stop losing revenue?</h2>
+            <h2>Ready to connect the dots?</h2>
             <p>Watch the demo. See exactly how it works. No sales call required.</p>
             <div class="cta-buttons">
                 <a href="#" class="btn btn-primary">
@@ -1851,7 +1612,8 @@
             </div>
         </div>
         <div class="footer-compliance">
-            <p>SMS messages are only sent to guests who opt in. Reply STOP to unsubscribe. Reply HELP for help. Message and data rates may apply.</p>
+            <p>BevAlc OS integrates with your existing stack—we don't replace your POS, club management, or compliance tools. We connect the dots between the transaction and the follow-up.</p>
+            <p style="margin-top: 0.75rem;">SMS messages are only sent to guests who opt in. Reply STOP to unsubscribe. Reply HELP for help. Message and data rates may apply.</p>
         </div>
     </footer>
 
@@ -1885,7 +1647,6 @@
                 }
             });
         });
-
-        // Add scroll effect to nav
-        window.addEventListener('scroll', () => {
-            const n
+    </script>
+</body>
+</html>
