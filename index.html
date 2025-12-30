@@ -764,6 +764,142 @@
             font-weight: 600;
         }
 
+        /* Comparison Table */
+        .comparison {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .comparison-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-header h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .comparison-header p {
+            color: var(--charcoal-light);
+            font-size: 1.1rem;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--cream);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .comparison-table thead {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .comparison-table th {
+            padding: 1.25rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-table th.bevalc-col {
+            background: var(--copper);
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(45, 41, 38, 0.08);
+            font-size: 0.95rem;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: var(--white);
+        }
+
+        .comparison-table .feature-name {
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .comparison-table .replaces-icons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .comparison-table .tool-icon {
+            padding: 0.25rem 0.6rem;
+            background: var(--white);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--charcoal-light);
+            border: 1px solid var(--cream-dark);
+        }
+
+        .comparison-table .cost {
+            color: var(--charcoal-light);
+            font-weight: 500;
+        }
+
+        .comparison-table .cost.strikethrough {
+            text-decoration: line-through;
+            color: var(--wine);
+        }
+
+        .comparison-table .included {
+            text-align: center;
+            background: rgba(44, 62, 45, 0.08);
+        }
+
+        .comparison-table .included svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--forest);
+            fill: none;
+            stroke-width: 3;
+        }
+
+        .comparison-table tfoot .total-row {
+            background: var(--white);
+            font-size: 1.1rem;
+        }
+
+        .comparison-table tfoot .total-row td {
+            padding: 1.25rem 1rem;
+            border-bottom: none;
+        }
+
+        .comparison-table .bevalc-price {
+            text-align: center;
+            background: rgba(184, 115, 51, 0.1);
+            color: var(--copper-dark);
+            font-size: 1.25rem;
+        }
+
+        .comparison-note {
+            text-align: center;
+            color: var(--charcoal-light);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
         /* Pricing */
         .pricing {
             padding: 6rem 2rem;
@@ -1152,8 +1288,8 @@
                     <div class="hero-badge-dot"></div>
                     Built for tasting rooms
                 </div>
-                <h1>The Operating System for <span>BevAlc Venues</span></h1>
-                <p class="hero-description">BevAlc OS connects the dots between transactions and follow-up. Missed calls get answered. Guests get reminded. Reviews happen on autopilot. Past visitors come back.</p>
+                <h1>The operating system for <span>BevAlc businesses.</span></h1>
+                <p class="hero-description">Your POS doesn't talk to your email. Your booking tool doesn't trigger reminders. BevAlc OS connects the dots. Missed calls get answered. Guests get reminded. Reviews happen on autopilot.</p>
                 <div class="hero-ctas">
                     <a href="#demo" class="btn btn-primary">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -1452,18 +1588,111 @@
             <div class="roi-box">
                 <h3>Does this pay for itself?</h3>
                 <p>If you recover just <span class="highlight">two or three missed calls per month</span> that turn into bookings, BevAlc OS covers its cost. Add in fewer no-shows, more Google reviews driving traffic, and past guests coming back on autopilot—the math works fast.</p>
-                
-                <div class="roi-consolidation">
-                    <div class="roi-consolidation-title">Tools you might be paying for separately</div>
-                    <div class="roi-tools">
-                        <span class="roi-tool">Mailchimp $50+</span>
-                        <span class="roi-tool">Podium $250+</span>
-                        <span class="roi-tool">SMS tool $100+</span>
-                        <span class="roi-tool">Tock fees</span>
-                    </div>
-                    <div class="roi-savings">BevAlc OS consolidates guest communication into one system.</div>
-                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+        <div class="comparison-container">
+            <div class="comparison-header">
+                <h2>Stop paying for 10 tools that don't talk to each other.</h2>
+                <p>BevAlc OS replaces your fragmented stack with one connected system.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-col">Feature</th>
+                            <th class="replaces-col">Replaces</th>
+                            <th class="cost-col">Typical Cost</th>
+                            <th class="bevalc-col">BevAlc OS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">CRM & Pipeline Management</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">HubSpot</span>
+                                <span class="tool-icon">Pipedrive</span>
+                            </td>
+                            <td class="cost">$99/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Email Marketing</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">Mailchimp</span>
+                                <span class="tool-icon">Klaviyo</span>
+                            </td>
+                            <td class="cost">$99/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">2-Way SMS Marketing</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">Postscript</span>
+                                <span class="tool-icon">SimpleTexting</span>
+                            </td>
+                            <td class="cost">$99/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Booking & Appointments</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">Calendly</span>
+                                <span class="tool-icon">Tock</span>
+                            </td>
+                            <td class="cost">$29/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Workflow Automations</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">Zapier</span>
+                                <span class="tool-icon">ActiveCampaign</span>
+                            </td>
+                            <td class="cost">$169/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Call Tracking</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">CallRail</span>
+                            </td>
+                            <td class="cost">$49/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Reputation Management</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">Podium</span>
+                                <span class="tool-icon">Birdeye</span>
+                            </td>
+                            <td class="cost">$159/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Forms & Surveys</td>
+                            <td class="replaces-icons">
+                                <span class="tool-icon">Typeform</span>
+                                <span class="tool-icon">JotForm</span>
+                            </td>
+                            <td class="cost">$49/mo</td>
+                            <td class="included"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="total-row">
+                            <td class="feature-name"><strong>Total</strong></td>
+                            <td class="replaces-icons"></td>
+                            <td class="cost strikethrough">$752/mo</td>
+                            <td class="bevalc-price"><strong>$397/mo</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <p class="comparison-note">Plus everything works together. No more CSV exports. No more "integration" headaches. One login.</p>
         </div>
     </section>
 
